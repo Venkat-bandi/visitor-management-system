@@ -1,0 +1,270 @@
+/* Dashboard.css - Enhanced Animations & Responsive Design */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes textGlow {
+  0% { text-shadow: 0 0 10px rgba(96, 165, 250, 0.5); }
+  100% { text-shadow: 0 0 20px rgba(96, 165, 250, 0.8); }
+}
+
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Mobile First Responsive Design */
+@media (max-width: 768px) {
+  .stat-card {
+    animation: slideInUp 0.4s ease-out;
+  }
+  
+  .table-row {
+    animation: fadeIn 0.6s ease-out;
+  }
+}
+
+@media (min-width: 769px) {
+  .stat-card {
+    animation: slideInUp 0.6s ease-out;
+  }
+  
+  .stat-card:nth-child(1) { animation-delay: 0.1s; }
+  .stat-card:nth-child(2) { animation-delay: 0.2s; }
+  .stat-card:nth-child(3) { animation-delay: 0.3s; }
+  .stat-card:nth-child(4) { animation-delay: 0.4s; }
+  .stat-card:nth-child(5) { animation-delay: 0.5s; }
+  
+  .table-row {
+    animation: fadeIn 0.8s ease-out;
+  }
+}
+
+/* Touch-friendly interactions for mobile */
+@media (max-width: 768px) {
+  .btn-security,
+  .btn-export,
+  .btn-logout,
+  .btn-search,
+  .btn-reset,
+  .page-btn,
+  .btn-add,
+  .btn-remove,
+  .btn-submit {
+    min-height: 44px; /* Minimum touch target size */
+  }
+  
+  .filter-input,
+  .security-input,
+  .filter-input:focus,
+  .security-input:focus {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* Form Input Animations */
+.filter-input:focus,
+.security-input:focus {
+  border-color: #60a5fa !important;
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.1) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  transform: translateY(-1px);
+}
+
+/* Button Animations */
+.btn-security:hover {
+  transform: translateY(-2px);
+  background: rgba(96, 165, 250, 0.2) !important;
+  border-color: rgba(96, 165, 250, 0.5) !important;
+}
+
+.btn-export:hover {
+  transform: translateY(-2px);
+  background: rgba(16, 185, 129, 0.2) !important;
+  border-color: rgba(16, 185, 129, 0.5) !important;
+}
+
+.btn-logout:hover {
+  transform: translateY(-2px);
+  background: rgba(239, 68, 68, 0.2) !important;
+  border-color: rgba(239, 68, 68, 0.5) !important;
+}
+
+.btn-search:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4) !important;
+}
+
+.btn-reset:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.page-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(96, 165, 250, 0.5) !important;
+}
+
+.btn-add:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.btn-remove:hover {
+  transform: translateY(-1px);
+  background: rgba(239, 68, 68, 0.2) !important;
+  border-color: rgba(239, 68, 68, 0.5) !important;
+}
+
+.btn-submit:hover:not(:disabled) {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4) !important;
+}
+
+.btn-loading {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); }
+  50% { box-shadow: 0 4px 12px rgba(59, 130, 246, 0.6); }
+  100% { box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); }
+}
+
+/* Card hover effects */
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+  border-color: rgba(96, 165, 250, 0.3) !important;
+}
+
+/* Table row hover effects */
+.table-row:hover {
+  background: rgba(255, 255, 255, 0.02) !important;
+  transform: translateX(5px);
+}
+
+/* Image hover effects */
+.visitor-img:hover {
+  transform: scale(1.1);
+  border-color: #60a5fa !important;
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+}
+
+/* Modal animations */
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: #f1f5f9 !important;
+  transform: rotate(90deg);
+}
+
+.modal-image {
+  animation: zoomIn 0.3s ease-out;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Status badge animations */
+.status-badge {
+  transition: all 0.3s ease;
+}
+
+.status-badge:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Message animations */
+.security-message {
+  animation: slideInUp 0.5s ease-out;
+}
+
+/* Loading states */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Ensure proper scrolling on mobile */
+@media (max-width: 768px) {
+  .container {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .table-wrapper {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Prevent horizontal scroll on mobile */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(96, 165, 250, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(96, 165, 250, 0.5);
+}
