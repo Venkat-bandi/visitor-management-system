@@ -1,8 +1,8 @@
-﻿__pycache__
-*.pyc
-.git
-.env
-.venv
-venv
-env
-*.log
+__pycache__ 
+*.pyc 
+.git 
+.env 
+.venv 
+venv 
+env 
+*.log 
