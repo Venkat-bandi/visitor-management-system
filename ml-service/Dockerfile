@@ -2,11 +2,9 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-# Copy ALL files
 COPY . .
 
-# Install dependencies
-RUN pip install --no-cache-dir -r requirements_high_accuracy.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 10000
 
